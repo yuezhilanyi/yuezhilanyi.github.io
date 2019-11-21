@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>TheMasteryofPandas | 杨花落尽</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="title: The Mastery of Pandasdate: 2019-11-20 13:12:18tags: study-notes
+
+source:
+The Mastery of pandas Part I
+The Mastery of pandas Part II
+
+DataFrame Attributes
+head(n): 返回前n行或后n行数据，n默认5
+info(): 返回概要">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TheMasteryofPandas | 杨花落尽">
+    <meta name="twitter:description" content="title: The Mastery of Pandasdate: 2019-11-20 13:12:18tags: study-notes
+
+source:
+The Mastery of pandas Part I
+The Mastery of pandas Part II
+
+DataFrame Attributes
+head(n): 返回前n行或后n行数据，n默认5
+info(): 返回概要">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TheMasteryofPandas | 杨花落尽">
+    <meta property="og:description" content="title: The Mastery of Pandasdate: 2019-11-20 13:12:18tags: study-notes
+
+source:
+The Mastery of pandas Part I
+The Mastery of pandas Part II
+
+DataFrame Attributes
+head(n): 返回前n行或后n行数据，n默认5
+info(): 返回概要">
+
+    
+    <meta name="author" content="yuezhilanyi">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://yoursite.com/2019/11/20/TheMasteryofPandas/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 杨花落尽 的主页"><img src="/images/avatar.jpg" width="80" alt="杨花落尽 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for 杨花落尽">杨花落尽</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description"></p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite/time.html">时光机</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/yuezhilanyi" title="GitHub" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-11-20T05:12:18.000Z" class="post-list__meta--date date">2019-11-20</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/study-notes/" rel="tag">study_notes</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">TheMasteryofPandas</h1>
+  </header>
+
+  <section class="post">
+    <hr>
+<p>title: The Mastery of Pandas<br>date: 2019-11-20 13:12:18<br>tags: study-notes</p>
+<hr>
+<h1 id="source"><a href="#source" class="headerlink" title="source:"></a>source:</h1><ul>
+<li><a href="https://medium.com/swlh/the-mastery-of-pandas-i-50156db42125" target="_blank" rel="noopener">The Mastery of pandas Part I</a></li>
+<li><a href="https://medium.com/@jaimezornoza/the-mastery-of-pandas-ii-bc4cf58c04f5" target="_blank" rel="noopener">The Mastery of pandas Part II</a></li>
+</ul>
+<h1 id="DataFrame-Attributes"><a href="#DataFrame-Attributes" class="headerlink" title="DataFrame Attributes"></a>DataFrame Attributes</h1><ul>
+<li>head(n): 返回前n行或后n行数据，n默认5</li>
+<li>info(): 返回概要信息（多少行，多少列，每列有多少非空数据，列的数据类型）</li>
+<li>describe(): 返回一些统计信息（均值、方差、极值等）</li>
+</ul>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="pd-read-csv"><a href="#pd-read-csv" class="headerlink" title="pd.read_csv()"></a>pd.read_csv()</h2><ul>
+<li>sep=’|’: 设置分隔符</li>
+<li>names=[‘’, ‘’]: 设置列名</li>
+</ul>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><ul>
+<li>df[:10] - 前10行</li>
+<li>df.loc[1] - index=1的行</li>
+<li>df.iloc[1] - 第2行(0为第一行)</li>
+<li>df[‘sex’] - sex 列</li>
+<li>df.iloc[0:5][‘Sex’] - 前5行的 sex 列</li>
+<li>df.loc[[‘Braund, Mr. Owen Harris’,’Cumings, Mrs. John Bradley (Florence Briggs Thayer)’],[‘Survived’, ‘Pclass’, ‘Sex’]] - 左行标签，右列表前</li>
+<li>df = df.drop([‘Parch’, ‘SibSp’], axis = 1) - 删除两列</li>
+<li>df = df.set_index(“Name”) - 将 Name 列设置为索引</li>
+<li>df[‘Cabin’].unique() - 独特值</li>
+<li>df[‘Cabin’].nunique() - 独特值的数量</li>
+<li>df[‘Sex’].value_counts() - 独特值及其数量</li>
+</ul>
+<h1 id="多表操作"><a href="#多表操作" class="headerlink" title="多表操作"></a>多表操作</h1><ul>
+<li>df2 = pd.concat([df, new_df], axis=0) - 按行拼接数据表</li>
+<li>df2[‘full_name’] = df2.apply(lambda row: str(row[‘Name’] + “ “ +row[‘Surname’]),axis=1) - 增加新列</li>
+<li>merged_df = df.merge(df2, how = ‘left’, left_on=’Name’, right_on=’full_name’).drop(‘full_name’, axis = 1) - 按字段拼接数据表</li>
+<li>class_groupby = merged_df.groupby(‘Pclass’) - 分组<ul>
+<li>class_groupby[‘Fare’].mean() - 均值</li>
+</ul>
+</li>
+</ul>
+<h1 id="对表进行批量操作"><a href="#对表进行批量操作" class="headerlink" title="对表进行批量操作"></a>对表进行批量操作</h1><ul>
+<li>merged_df[‘old_or_not’] = merged_df[‘Age’].map(lambda age: 1 if age &gt;=45 else 0)</li>
+<li>merged_df[‘boolean_sex’] = merged_df[‘Sex’].map({‘male’ : 0, ‘female’: 1})</li>
+<li>def dolar_to_euro(dollars, exchange_rate):<br>  euros = dollars*exchange_rate<br>  return euros<br>merged_df[‘Fare_euros’] = merged_df[‘Fare’].apply(dolar_to_euro,exchange_rate = 0.9)</li>
+<li>merged_df[‘old_woman’] = merged_df.apply(lambda row: row[‘boolean_sex’] and row[‘old_or_not’], axis = 1)</li>
+<li>old_woman_df = merged_df[merged_df[‘old_woman’] == 1]</li>
+<li>part_cols = [‘Screw’, ‘Nut’, ‘Nail’, ‘Bearing’]<br>duration_part_df = pd.DataFrame(np.random.randint(0,100,size=(100, 4)), columns=part_cols)</li>
+<li>duration_part_df= duration_part_df.applymap(lambda days: days*24)</li>
+</ul>
+<h1 id="copy-and-view"><a href="#copy-and-view" class="headerlink" title="copy and view"></a>copy and view</h1>
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/11/09/hello-world/" title="Hello World">Hello World</a></h2>
+                <p class="excerpt">
+                
+                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-11-09T04:23:50.136Z" class="post-list__meta--date date">2019-11-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2019/11/09/hello-world/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 yuezhilanyi - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno " target="_blank" rel="noopener">new-vno</a> 主题，由<a href="https://monniya.com " target="_blank" rel="noopener">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
