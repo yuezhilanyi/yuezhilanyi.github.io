@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>杨花落尽</title>
+    <title>3 steps to update parameters of Faster R-CNN/SSD models in TensorFlow Object Detection API | 杨花落尽</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,15 +12,30 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="">
+    <meta name="description" content="3 steps
+Decide the parameter to be updated (from model config file)
+Search for the given parameter in the repository
+Analyze the proto file (to find parameters can be finetuned)
+
+some parametersimage_">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="杨花落尽">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="3 steps to update parameters of Faster R-CNN/SSD models in TensorFlow Object Detection API | 杨花落尽">
+    <meta name="twitter:description" content="3 steps
+Decide the parameter to be updated (from model config file)
+Search for the given parameter in the repository
+Analyze the proto file (to find parameters can be finetuned)
+
+some parametersimage_">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="杨花落尽">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="3 steps to update parameters of Faster R-CNN/SSD models in TensorFlow Object Detection API | 杨花落尽">
+    <meta property="og:description" content="3 steps
+Decide the parameter to be updated (from model config file)
+Search for the given parameter in the repository
+Analyze the proto file (to find parameters can be finetuned)
+
+some parametersimage_">
 
     
     <meta name="author" content="yuezhilanyi">
@@ -35,7 +50,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://yoursite.com"/>
+    <link rel="canonical" href="http://yoursite.com/2019/11/22/3-steps-to-update-parameters-of-Faster-R-CNN-SSD-models-in-TensorFlow-Object-Detection-API/"/>
 
                  
 </head>
@@ -122,35 +137,96 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
-    
-  <ol class="post-list">
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/22/3-steps-to-update-parameters-of-Faster-R-CNN-SSD-models-in-TensorFlow-Object-Detection-API/" title="link to post.title">3 steps to update parameters of Faster R-CNN/SSD models in TensorFlow Object Detection API</a></h2>
-      <p class="excerpt">
-    
-      3 steps
-Decide the parameter to be updated (from model config file)
-Search for the given parameter in the repository
-Analyze the proto file (to find parameters can be finetuned)
+            <article class="post-container post-container--single">
 
-some parametersimage_
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2019-11-22T07:55:54.000Z" class="post-list__meta--date date">2019-11-22</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-11-22T07:55:54.000Z" class="post-list__meta--date date">2019-11-22</time> &#8226; <span class="post-meta__tags tags">于 
   <a class="tag-link" href="/tags/stduy-notes-deep-learning/" rel="tag">stduy_notes, deep_learning</a>
-</span><a class="btn-border-small" href="/2019/11/22/3-steps-to-update-parameters-of-Faster-R-CNN-SSD-models-in-TensorFlow-Object-Detection-API/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">3 steps to update parameters of Faster R-CNN/SSD models in TensorFlow Object Detection API</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="3-steps"><a href="#3-steps" class="headerlink" title="3 steps"></a>3 steps</h1><ol>
+<li>Decide the parameter to be updated (from model config file)</li>
+<li>Search for the given parameter in the repository</li>
+<li>Analyze the proto file (to find parameters can be finetuned)</li>
+</ol>
+<h1 id="some-parameters"><a href="#some-parameters" class="headerlink" title="some parameters"></a>some parameters</h1><h2 id="image-resize-image-resizer-proto"><a href="#image-resize-image-resizer-proto" class="headerlink" title="image_resize - image_resizer.proto"></a>image_resize - image_resizer.proto</h2><ul>
+<li>keep_aspect_ratio_resizer<ul>
+<li>min_dimension</li>
+<li>max_dimension</li>
+<li>resize_method</li>
+<li>pad_to_max_dimension</li>
+<li>convert_to_grayscale,and per_channel_pad_value</li>
+</ul>
+</li>
+<li>fixed_shape_resizer<ul>
+<li>height</li>
+<li>width</li>
+<li>resize_method</li>
+<li>convert_to_grayscale</li>
+</ul>
+</li>
+</ul>
+<h2 id="weighter-initializer-hyperparams-proto"><a href="#weighter-initializer-hyperparams-proto" class="headerlink" title="weighter initializer - hyperparams.proto"></a>weighter initializer - hyperparams.proto</h2><ul>
+<li>truncated_normal_initializer<ul>
+<li>stddev </li>
+</ul>
+</li>
+<li>variance_scaling_initializer<ul>
+<li>factor </li>
+<li>uniform</li>
+<li>mode </li>
+</ul>
+</li>
+<li>random_normal_initializer<ul>
+<li>mean </li>
+<li>stddev </li>
+</ul>
+</li>
+</ul>
+<h2 id="weighter-optimizer-optimizer-proto"><a href="#weighter-optimizer-optimizer-proto" class="headerlink" title="weighter optimizer - optimizer.proto"></a>weighter optimizer - optimizer.proto</h2><ul>
+<li>rms_prop_optimizer<ul>
+<li>learning_rate</li>
+<li>momentum_optimizer_value </li>
+<li>decay </li>
+<li>epsilon </li>
+</ul>
+</li>
+<li>momentum_optimizer<ul>
+<li>learning_rate</li>
+<li>momentum_optimizer_value</li>
+</ul>
+</li>
+<li>adam_optimizer <ul>
+<li>learning_rate</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
     
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/21/StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal/" title="link to post.title">StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal</a></h2>
-      <p class="excerpt">
-    
-      @TOC
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/11/21/StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal/" title="StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal">StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal</a></h2>
+                <p class="excerpt">
+                
+                @TOC
 经作者测试，三种最好的数据增强方法如下：
 
 A: 旋转
@@ -164,82 +240,22 @@ C: 边界框沿着Y轴移动
 除此以外，作者还总结了以下几条策略：
 
 图像分类的技巧并不适用于目标检测————收益太小
-上述三种增强方法
-增强改进了权重的L2范数
-上述数据增强方法对小物体特别有效
-
-链接
-
-论文地址
-转载
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2019-11-21T13:26:46.000Z" class="post-list__meta--date date">2019-11-21</time> &#8226; <span class="post-list__meta--tags tags">于 
+上
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-11-21T13:26:46.000Z" class="post-list__meta--date date">2019-11-21</time> &#8226; <span class="post-list__meta--tags tags">于 
   <a class="tag-link" href="/tags/study-notes-deep-learning/" rel="tag">study_notes, deep_learning</a>
 </span><a class="btn-border-small" href="/2019/11/21/StateOfTheArtObjectDetectionUseTheseTop3DataAugmentationsAndGoogleBrainsOptimal/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
+                       
+            </div>
+        
+     
+   
+   
   
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/20/TheMasteryofPandas/" title="link to post.title">TheMasteryofPandas</a></h2>
-      <p class="excerpt">
-    
-      
-title: The Mastery of Pandasdate: 2019-11-20 13:12:18tags: study-notes
+</section>
 
-source:
-The Mastery of pandas Part I
-The Mastery of pandas Part II
-
-DataFrame Attributes
-head(n): 返回前n行或后n行数据，n默认5
-info(): 返回概要
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2019-11-20T05:12:18.000Z" class="post-list__meta--date date">2019-11-20</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/study-notes/" rel="tag">study_notes</a>
-</span><a class="btn-border-small" href="/2019/11/20/TheMasteryofPandas/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
   
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/09/hello-world/" title="link to post.title">Hello World</a></h2>
-      <p class="excerpt">
-    
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2019-11-09T04:23:50.136Z" class="post-list__meta--date date">2019-11-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2019/11/09/hello-world/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-  </ol>
-
-
- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    }); 
-    
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</div>
-
 
             <footer class="footer">
     <span class="footer__copyright">
